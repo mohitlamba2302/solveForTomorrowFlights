@@ -20,9 +20,12 @@ def scrape():
 	response = get(built_url)
 	# pp.pprint(response.text[:1000])
 	soup = BeautifulSoup(response.text, "html.parser")
-	
-	for rows in soup.find_all('div', {'class': 'col-md-2 col-sm-2 col-xs-5 mr5 cle'}):
-		pp.pprint(rows)
+	ctr = 0
+	for row in soup.find_all('div', {'class': 'row'}):
+		name = row.find("div", class_="col-md-7 col-sm-7 padd-lft airl-txt-n")
+		print(name)
+		ctr+=1
+	print(ctr)
 
 
 
