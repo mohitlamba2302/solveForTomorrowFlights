@@ -38,12 +38,15 @@
 # browser.close()
 
 
-# In[7]:
+# In[70]:
 
 
 import requests
 from bs4 import BeautifulSoup
+from selenium import webdriver
+import time
 
+driver = webdriver.PhantomJS()
 
 
 url= 'https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json'
@@ -55,7 +58,7 @@ type(data)
 print(data[0])
 
 
-# In[8]:
+# In[71]:
 
 
 def getAirportData(frm, dest):
@@ -83,37 +86,62 @@ def getAirportData(frm, dest):
     return frm_code,frm_city,frm_country,to_code,to_city,to_country
 
 
-# In[9]:
+# In[175]:
 
 
 def form_url(frm, dest,date):
     frm_code,frm_city,frm_country,to_code,to_city,to_country = getAirportData(frm,dest)
-    url = 'https://flight.easemytrip.com/FlightList/Index?srch='+frm_code+'-'+frm_city.replace(" ","")+'-'+frm_country.replace(" ","")+'|'+to_code+'-'+to_city.replace(" ","")+'-'+to_country.replace(" ","")+'|01/07/2020&px=1-0-0&cbn=0&ar=undefined&isow=true&isdm=true&lng=&'
-    
+    url = 'https://flight.easemytrip.com/FlightList/Index?srch='+frm_code+'-'+frm_city.replace(" ","")+'-'+frm_country.replace(" ","")+'|'+to_code+'-'+to_city.replace(" ","")+'-'+to_country.replace(" ","")+'|'+date+'&px=1-0-0&cbn=0&ar=undefined&isow=true&isdm=true&lng=&'
     return url
     
 
 
-# In[13]:
+# In[228]:
 
 
-form_url('delhi','mumbai','01/04/2021')
+form_url('delhi','mumbai','01/08/2020')
 
 
-# In[11]:
+# In[229]:
 
 
 def get_html(frm,dest,date):
     url=form_url(frm,dest,date)
-    html_content = requests.get(url).text
-    soup = BeautifulSoup(html_content)
-    return soup
+    driver.get(url)
+    time.sleep(5)
 
 
-# In[12]:
+    html = driver.page_source
+    return html
 
 
-print(get_html('delhi','mumbai','01/04/2021'))
+# In[230]:
+
+
+def get_children(frm, dest,date):
+    soup=BeautifulSoup(get_html(frm,dest,date),'lxml')
+    ele = soup.find_all('div',{'class':'fltResult'})
+    return ele
+    
+
+
+# In[231]:
+
+
+child = get_children('delhi','mumbai','01/08/2020')
+
+
+# In[232]:
+
+
+for t in child:
+    print(t.children)
+
+
+# In[227]:
+
+
+print(child[0])
 
 
 # In[ ]:
