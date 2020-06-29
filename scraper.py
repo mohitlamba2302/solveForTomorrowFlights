@@ -38,16 +38,18 @@
 # browser.close()
 
 
-# In[2]:
+# In[72]:
 
 
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
+from selenium.webdriver import ActionChains
+
 
 driver = webdriver.PhantomJS()
-
+# driver = webdriver.Safari()
 
 url= 'https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json'
 r = requests.get(url)
@@ -58,7 +60,7 @@ type(data)
 print(data[0])
 
 
-# In[3]:
+# In[73]:
 
 
 def getAirportData(frm, dest):
@@ -86,7 +88,7 @@ def getAirportData(frm, dest):
     return frm_code,frm_city,frm_country,to_code,to_city,to_country
 
 
-# In[4]:
+# In[74]:
 
 
 def form_url(frm, dest,date):
@@ -96,7 +98,7 @@ def form_url(frm, dest,date):
     
 
 
-# In[5]:
+# In[75]:
 
 
 def get_html(frm,dest,date):
@@ -109,7 +111,7 @@ def get_html(frm,dest,date):
     return html
 
 
-# In[6]:
+# In[76]:
 
 
 def get_children(frm, dest,date):
@@ -119,7 +121,55 @@ def get_children(frm, dest,date):
     
 
 
-# In[7]:
+# In[82]:
+
+
+child = get_children('delhi','mumbai','01/08/2020')
+
+
+# In[86]:
+
+
+child[0].text
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[77]:
 
 
 def create_dict(frm, dest,date):
@@ -132,27 +182,55 @@ def create_dict(frm, dest,date):
         if(l[9] == l[10]):
             continue
         dic={
-            "Airline name":l[0],
-            "Plane number":l[1],
-            "Departure airport":l[3],
-            "Departure time":l[2],
-            "Arrival airport":l[7],
-            "Arrival time":l[6],
-            "Flight duration":l[4],
-            "Stops":l[5],
-            "Original price": l[9],
-            "Reduced price": l[10],
-            "Offers":l[12][:-(len(" Discount Applied"))]
+            "airline_name":l[0].replace(" ",""),
+            "plane_number":l[1].replace(" ",""),
+            "departure_airport":l[3].replace(" ",""),
+            "departure_time":l[2].replace(" ",""),
+            "arrival_airport":l[7].replace(" ",""),
+            "arrival_time":l[6].replace(" ",""),
+            "flight_duration":l[4].replace(" ",""),
+            "stops":l[5].replace(" ",""),
+            "original_price": l[9].replace(" ",""),
+            "reduced_price": l[10].replace(" ",""),
+            "offers":l[12][:-(len(" Discount Applied"))]
             
         }
         content.append(dic)
     return content
 
 
-# In[8]:
+# In[87]:
 
 
 print(create_dict('delhi','mumbai','01/08/2020'))
+
+
+# In[68]:
+
+
+child = get_children('delhi','mumbai','01/08/2020')
+
+
+# In[78]:
+
+
+soup=BeautifulSoup(get_html('delhi','mumbai','01/08/2020'),'lxml')
+
+
+# In[88]:
+
+
+elements = driver.find_elements_by_class_name("book-bt-n")
+
+
+# In[89]:
+
+
+elements[0].click()
+time.sleep(5)
+print(driver.current_url)
+
+# ActionChains(driver).click(elements[0]).perform()
 
 
 # In[ ]:
