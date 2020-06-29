@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 # import time
@@ -38,7 +38,7 @@
 # browser.close()
 
 
-# In[70]:
+# In[2]:
 
 
 import requests
@@ -58,7 +58,7 @@ type(data)
 print(data[0])
 
 
-# In[71]:
+# In[3]:
 
 
 def getAirportData(frm, dest):
@@ -86,7 +86,7 @@ def getAirportData(frm, dest):
     return frm_code,frm_city,frm_country,to_code,to_city,to_country
 
 
-# In[175]:
+# In[4]:
 
 
 def form_url(frm, dest,date):
@@ -96,26 +96,20 @@ def form_url(frm, dest,date):
     
 
 
-# In[228]:
-
-
-form_url('delhi','mumbai','01/08/2020')
-
-
-# In[229]:
+# In[5]:
 
 
 def get_html(frm,dest,date):
     url=form_url(frm,dest,date)
     driver.get(url)
-    time.sleep(5)
+    time.sleep(10)
 
 
     html = driver.page_source
     return html
 
 
-# In[230]:
+# In[6]:
 
 
 def get_children(frm, dest,date):
@@ -125,23 +119,40 @@ def get_children(frm, dest,date):
     
 
 
-# In[231]:
+# In[7]:
 
 
-child = get_children('delhi','mumbai','01/08/2020')
+def create_dict(frm, dest,date):
+    child = get_children(frm,dest,date)
+    dic = {}
+    content= []
+    for c in child:
+        l = c.text.split('\n')
+        l=[x for x in l if x]
+        if(l[9] == l[10]):
+            continue
+        dic={
+            "Airline name":l[0],
+            "Plane number":l[1],
+            "Departure airport":l[3],
+            "Departure time":l[2],
+            "Arrival airport":l[7],
+            "Arrival time":l[6],
+            "Flight duration":l[4],
+            "Stops":l[5],
+            "Original price": l[9],
+            "Reduced price": l[10],
+            "Offers":l[12][:-(len(" Discount Applied"))]
+            
+        }
+        content.append(dic)
+    return content
 
 
-# In[232]:
+# In[8]:
 
 
-for t in child:
-    print(t.children)
-
-
-# In[227]:
-
-
-print(child[0])
+print(create_dict('delhi','mumbai','01/08/2020'))
 
 
 # In[ ]:
