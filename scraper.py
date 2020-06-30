@@ -1,240 +1,171 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-# import time
-# from selenium.webdriver.common.keys import Keys
-# from selenium import webdriver
-# from selenium.webdriver.support.wait import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
-# from selenium.webdriver.common.by import By
-# browser = webdriver.Safari()
-
-# url = 'https://www.easemytrip.com/'
-# browser.get(url)
-# WebDriverWait(browser,10000).until(EC.visibility_of_element_located((By.TAG_NAME,'body')))
-# from_element = browser.find_element_by_id('FromSector_show')
-# from_element.click()
-# from_element.send_keys(Keys.HOME)
-
-# # For date 10 Oct 2015
-# from_element.send_keys("Mumbai(BOM)")
-# from_element.send_keys(Keys.TAB)
-
-# to_element = browser.find_element_by_id('Editbox13_show')
-# to_element.click()
-# to_element.send_keys(Keys.HOME)
-
-# # For date 10 Oct 2015
-# to_element.send_keys("New Delhi(DEL)")
-# to_element.send_keys(Keys.TAB)
-
-# # fiv_0_28/06/2020
-# ele = browser.find_element_by_id()
-# browser.find_element_by_xpath("search").click()
-# time.sleep(100)
-# browser.close()
-
-
-# In[72]:
-
-
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
-from selenium.webdriver import ActionChains
-
+from flask import Flask
+import json
+from flask import jsonify
+from random import randint
 
 driver = webdriver.PhantomJS()
-# driver = webdriver.Safari()
-
-url= 'https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json'
-r = requests.get(url)
-data= r.json()
-# print(data)
-type(data)
-
-print(data[0])
+app = Flask(__name__)
+# app.config["DEBUG"]=True
 
 
-# In[73]:
-
+def get_city_data():
+	# url= 'https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json'
+	# r = requests.get(url)
+	# data= r.json()
+	my_cities = []
+	# for i in data:
+	# 	my_cities.append([i['city']])
+	my_cities = ['delhi', 'bangalore', 'mumbai', 'kolkata', 'pune', 'indore']
+	return my_cities
 
 def getAirportData(frm, dest):
-    frm_code = ''
-    frm_city = ''
-    frm_country = ''
-    
-    
-    to_code=''
-    to_city=''
-    to_country=''
-    for i in data:
-        if i['city'].lower().find(frm.lower()) !=- 1:
-            frm_code=i['code']
-            frm_city=i['city']
+	url= 'https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json'
+	r = requests.get(url)
+	data= r.json()
 
-            frm_country=i['country']
-        
-        if i['city'].lower().find(dest.lower()) !=- 1:
-            to_code=i['code']
-            to_city=i['city']
+	frm_code = ''
+	frm_city = ''
+	frm_country = ''
+	
+	
+	to_code=''
+	to_city=''
+	to_country=''
+	for i in data:
+		if i['city'].lower().find(frm.lower()) !=- 1:
+			frm_code=i['code']
+			frm_city=i['city']
 
-            to_country=i['country']
-            
-    return frm_code,frm_city,frm_country,to_code,to_city,to_country
+			frm_country=i['country']
+		
+		if i['city'].lower().find(dest.lower()) !=- 1:
+			to_code=i['code']
+			to_city=i['city']
 
-
-# In[74]:
-
-
-def form_url(frm, dest,date):
-    frm_code,frm_city,frm_country,to_code,to_city,to_country = getAirportData(frm,dest)
-    url = 'https://flight.easemytrip.com/FlightList/Index?srch='+frm_code+'-'+frm_city.replace(" ","")+'-'+frm_country.replace(" ","")+'|'+to_code+'-'+to_city.replace(" ","")+'-'+to_country.replace(" ","")+'|'+date+'&px=1-0-0&cbn=0&ar=undefined&isow=true&isdm=true&lng=&'
-    return url
-    
+			to_country=i['country']
+			
+	return frm_code,frm_city,frm_country,to_code,to_city,to_country
 
 
-# In[75]:
+def ease_form_url(frm, dest,date):
+	frm_code,frm_city,frm_country,to_code,to_city,to_country = getAirportData(frm,dest)
+	url = 'https://flight.easemytrip.com/FlightList/Index?srch='+frm_code+'-'+frm_city.replace(" ","")+'-'+frm_country.replace(" ","")+'|'+to_code+'-'+to_city.replace(" ","")+'-'+to_country.replace(" ","")+'|'+date+'&px=1-0-0&cbn=0&ar=undefined&isow=true&isdm=true&lng=&'
+	return url	
+
+def ease_get_html(frm,dest,date):
+	url=ease_form_url(frm,dest,date)
+	driver.get(url)
+	time.sleep(10)
+	html = driver.page_source
+	return html
+
+def ease_get_children(frm, dest,date):
+	soup=BeautifulSoup(ease_get_html(frm,dest,date),'lxml')
+	ele = soup.find_all('div',{'class':'fltResult'})
+	return ele
 
 
-def get_html(frm,dest,date):
-    url=form_url(frm,dest,date)
-    driver.get(url)
-    time.sleep(10)
+def ixigo_form_url(frm, dest, date):
+	frm_code,frm_city,frm_country,to_code,to_city,to_country = getAirportData(frm,dest)
+	# url = 'https://flight.easemytrip.com/FlightList/Index?srch='+frm_code+'-'+frm_city.replace(" ","")+'-'+frm_country.replace(" ","")+'|'+to_code+'-'+to_city.replace(" ","")+'-'+to_country.replace(" ","")+'|'+date+'&px=1-0-0&cbn=0&ar=undefined&isow=true&isdm=true&lng=&'
+	temp_date = date.split('/')
+	new_date = ''
+	for i in temp_date:
+		new_date+=str(i)
+	base_url = 'https://www.ixigo.com/search/result/flight/'+frm_code+'/'+to_code+'/'+new_date+'//1/0/0/e?source=Search%20Form'
+	# url = 'https://www.cleartrip.com/flights/results?origin=New+Delhi,+IN+-+Indira+Gandhi+Airport+(DEL)&from=DEL&destination=Mumbai,+IN+-+Chatrapati+Shivaji+Airport+(BOM)&to=BOM&depart_date=27/07/2020&adults=1&childs=0&infants=0&class=Economy&airline=&carrier=&intl=n&sd=1593441434422&rnd_one=O'
+	# print(base_url)
+	return base_url
 
+def ixigo_get_html(frm,dest,date):
+	# url=form_url(frm,dest,date)
+	# response = requests.get(url)
+	# soup = BeautifulSoup(response.text, "html.parser")
+	# return soup
+	url=ixigo_form_url(frm,dest,date)
+	driver.get(url)
+	time.sleep(20)
+	html = driver.page_source
+	return html
 
-    html = driver.page_source
-    return html
-
-
-# In[76]:
-
-
-def get_children(frm, dest,date):
-    soup=BeautifulSoup(get_html(frm,dest,date),'lxml')
-    ele = soup.find_all('div',{'class':'fltResult'})
-    return ele
-    
-
-
-# In[82]:
-
-
-child = get_children('delhi','mumbai','01/08/2020')
-
-
-# In[86]:
-
-
-child[0].text
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[77]:
-
+def ixigo_get_children(frm, dest,date):
+	soup=BeautifulSoup(ixigo_get_html(frm,dest,date),'lxml')
+	ele = soup.find_all('div',{'class':'summary-section'})
+#     ele = soup.find_all('div')
+	return ele
 
 def create_dict(frm, dest,date):
-    child = get_children(frm,dest,date)
-    dic = {}
-    content= []
-    for c in child:
-        l = c.text.split('\n')
-        l=[x for x in l if x]
-        if(l[9] == l[10]):
-            continue
-        dic={
-            "airline_name":l[0].replace(" ",""),
-            "plane_number":l[1].replace(" ",""),
-            "departure_airport":l[3].replace(" ",""),
-            "departure_time":l[2].replace(" ",""),
-            "arrival_airport":l[7].replace(" ",""),
-            "arrival_time":l[6].replace(" ",""),
-            "flight_duration":l[4].replace(" ",""),
-            "stops":l[5].replace(" ",""),
-            "original_price": l[9].replace(" ",""),
-            "reduced_price": l[10].replace(" ",""),
-            "offers":l[12][:-(len(" Discount Applied"))]
-            
-        }
-        content.append(dic)
-    return content
 
+	child = ease_get_children(frm,dest,date)
+	dic = {}
+	content= []
+	for c in child:
+		l = c.text.split('\n')
+		l=[x for x in l if x]
+		if(l[9] == l[10]):
+			continue
+		dic={
+			"website": "easeMyTrip",
+			"airline_name":l[0].replace(" ",""),
+			"plane_number":l[1].replace(" ",""),
+			"date": date,
+			"departure_airport":l[3].replace(" ",""),
+			"departure_time":l[2].replace(" ",""),
+			"arrival_airport":l[7].replace(" ",""),
+			"arrival_time":l[6].replace(" ",""),
+			"flight_duration":l[4].replace(" ",""),
+			"stops":l[5].replace(" ",""),
+			"original_price": l[9].replace(" ",""),
+			"reduced_price": l[10].replace(" ",""),
+			"offers":l[12][:-(len(" Discount Applied"))]
+			
+		}
+		content.append(dic)
+	
+	child = ixigo_get_children(frm, dest, date)
+	stop = '0'
+ 
+	for c in child:
+		left = c.find('div',{'class':'left-wing'})
+		right = c.find('div',{'class':'right-wing'})
+		plane_details = c.findAll('div',{'class': 'u-text-ellipsis'})
+		if c.find(class_='label br').text!='non-stop':
+			stop = c.find(class_='label br').text.split()[0]
+		dic={
+		  "website": "ixigo",
+		  "airline_name":plane_details[1].text,
+		  "plane_number":plane_details[2].text,
+		  "date": date,
+		  "departure_airport":left.find(class_='city u-text-ellipsis').text,
+		  "departure_time":left.find(class_='time').text,
+		  "arrival_airport":right.find(class_='city u-text-ellipsis').text,
+		  "arrival_time":right.find(class_='time').text,
+		  "flight_duration":c.find(class_='label tl').text,
+		  "stops":stop,
+		  "original_price":c.find('span',{'class':''}).text,
+		  "reduced_price": c.find('span',{'class':''}).text,
+		  "offers": c.find(class_='dynot').text
+			
+		}
+		content.append(dic)
+	return content
 
-# In[87]:
+@app.route('/')
+def hello():
+	my_cities = get_city_data()
+	date = '22/07/2020'
+	for frm in my_cities:
+		for dest in my_cities:
+			if frm==dest:
+				continue
+			dictionary = create_dict(frm, dest, '01/08/2020')
+			json_object = json.dumps(dictionary, indent = 4)
+			print('writing')
+			with open("sample.json", "w") as outfile: 
+				outfile.write(json_object) 
 
-
-print(create_dict('delhi','mumbai','01/08/2020'))
-
-
-# In[68]:
-
-
-child = get_children('delhi','mumbai','01/08/2020')
-
-
-# In[78]:
-
-
-soup=BeautifulSoup(get_html('delhi','mumbai','01/08/2020'),'lxml')
-
-
-# In[88]:
-
-
-elements = driver.find_elements_by_class_name("book-bt-n")
-
-
-# In[89]:
-
-
-elements[0].click()
-time.sleep(5)
-print(driver.current_url)
-
-# ActionChains(driver).click(elements[0]).perform()
-
-
-# In[ ]:
-
-
-
-
+	return 'hello world'
