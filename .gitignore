@@ -1,3 +1,3 @@
-/node_modules
-package-lock.json
-/helper/key_dev.js
+./flights/node_modules
+./flights/package-lock.json
+./flights/helper/key_dev.js
