@@ -98,16 +98,38 @@ def ixigo_get_children(frm, dest,date):
 #     ele = soup.find_all('div')
 	return ele
 
+def get_inner_offers(frm, dest,date):
+    soup=BeautifulSoup(get_html(frm,dest,date),'lxml')
+    elements = driver.find_elements_by_class_name("book-bt-n")
+    if(len(elements)>0):
+        elements[0].click()
+        time.sleep(10)
+        html = driver.page_source
+        soup=BeautifulSoup(html,'lxml')
+        ele = soup.find_all('div',{'class':'coupn_scrl'})
+        l = ele[0].text.split('\n')
+        l=[x for x in l if x]
+        if 'T&C Apply' in l: l.remove('T&C Apply')
+        if ' T&C Apply' in l: l.remove(' T&C Apply')
+        if 'T&C Apply ' in l: l.remove('T&C Apply ')
+        del l[0::2]
+        '\n'.join(l)
+        return l
+    else:
+        print("couldn't connect")
+
 def create_dict(frm, dest,date):
 
 	child = ease_get_children(frm,dest,date)
-	dic = {}
+	time.sleep(5)
+	offers = get_inner_offers(frm, dest,date)
 	content= []
+	dic = {}
 	for c in child:
 		l = c.text.split('\n')
 		l=[x for x in l if x]
-		if(l[9] == l[10]):
-			continue
+		# if(l[9] == l[10]):
+		# 	continue
 		dic={
 			"website": "easeMyTrip",
 			"airline_name":l[0].replace(" ",""),
@@ -121,7 +143,7 @@ def create_dict(frm, dest,date):
 			"stops":l[5].replace(" ",""),
 			"original_price": l[9].replace(" ",""),
 			"reduced_price": l[10].replace(" ",""),
-			"offers":l[12][:-(len(" Discount Applied"))]
+			"offers":offers
 			
 		}
 		content.append(dic)
