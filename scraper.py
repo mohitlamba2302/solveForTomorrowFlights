@@ -165,6 +165,8 @@ def hello():
 			dictionary = create_dict(frm, dest, '01/08/2020')
 			json_object = json.dumps(dictionary, indent = 4)
 			print('writing')
+			r = requests.post('https://flightscrap.herokuapp.com/api/flights/add', data={'flights':json_object}, allow_redirects=True)
+			print(r)
 			with open("sample.json", "w") as outfile: 
 				outfile.write(json_object) 
 
