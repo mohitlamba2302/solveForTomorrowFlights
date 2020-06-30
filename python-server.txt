@@ -1,0 +1,33 @@
+python flask API is made-
+
+it scrapes two websites, [easemytrip.com, ixigo.com]
+
+uses selenium web driver and beautiful soup,
+
+fetches all flight details from one airport in the list to other,
+
+the list of airports can be extended,
+
+data fetched has the following attributes = {
+	"website",
+	"airline_name",
+	"plane_number":,
+	"date": ,
+	"departure_airport":,
+	"departure_time":,
+	"arrival_airport":,
+	"arrival_time":,
+	"flight_duration":,
+	"stops":,
+	"original_price":,
+	"reduced_price":,
+	"offers":
+} 
+
+the flight details are looped through the airport list, for a particular date, and data from generated URS is fetched dynamically, 
+
+That data is sent to a node.js server which populates the database with that data.
+
+it is a batch process where database is updated after all flight details for flights from port(A)->port(B) where A,B belongs to the list, is scraped.
+
+This process runs every 15 minutes, so that entire database is updated with new flight prices after every 15 mins.
