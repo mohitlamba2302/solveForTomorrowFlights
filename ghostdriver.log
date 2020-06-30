@@ -1,5 +1,484 @@
-[INFO  - 2020-06-30T16:12:47.175Z] GhostDriver - Main - running on port 8636
-[INFO  - 2020-06-30T16:12:50.892Z] Session [8bcd30b0-baec-11ea-bfa5-fbb3559048f4] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2020-06-30T16:12:50.893Z] Session [8bcd30b0-baec-11ea-bfa5-fbb3559048f4] - page.customHeaders:  - {}
-[INFO  - 2020-06-30T16:12:50.893Z] Session [8bcd30b0-baec-11ea-bfa5-fbb3559048f4] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2020-06-30T16:12:50.893Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 8bcd30b0-baec-11ea-bfa5-fbb3559048f4
+[INFO  - 2020-06-30T17:17:12.242Z] GhostDriver - Main - running on port 8967
+[INFO  - 2020-06-30T17:17:16.376Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-06-30T17:17:16.376Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.customHeaders:  - {}
+[INFO  - 2020-06-30T17:17:16.376Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-06-30T17:17:16.376Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a
+[ERROR - 2020-06-30T17:17:25.846Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:25.847Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:25.951Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:25.951Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.258Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.259Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.362Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:145:441
+e@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:45:449
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:48:301
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.362Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.667Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.668Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.767Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:26.768Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:46.925Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:46.925Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:47.020Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:47.020Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:48.135Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:48.136Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:48.318Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:48.319Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:48.387Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:17:48.387Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:18:01.867Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: Can't find variable: httpData
+ApplyInsurance@https://flight.easemytrip.com/Scripts/ApiCall.min_new.js?v=hj:7773:52
+CheckInsuranceON@https://flight.easemytrip.com/Scripts/ApiCall.min_new.js?v=hj:6653:38
+fn
+$eval@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:145:347
+pre@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:279:306
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:16:76
+la@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:81:91
+p@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:66:151
+g@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:58:482
+g@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:58:499
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:58:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:63:44
+d@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:59:475
+m@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:64:59
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:276:470
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:182
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928 <div class="ad-m" ng-init="CheckInsuranceON()">
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:18:01.867Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:18:19.046Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: SyntaxError: Unexpected token ')'
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:18:19.046Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  insertBefore (https://www.ixigo.com/search/result/flight/DEL/BLR/01082020//1/0/0/e?source=Search%20Form:3)
+  activateScript (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  (anonymous function) (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  run (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  (anonymous function) (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  (anonymous function) (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.141Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.142Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.220Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.220Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.480Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:145:441
+e@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:45:449
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:48:301
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.480Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.484Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.484Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.784Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.785Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.896Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:24.896Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:45.572Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:45.573Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:45.658Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:45.659Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:47.065Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:47.066Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:47.397Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:47.397Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:47.481Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:172:312
+fn
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:128:454
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
+J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
+onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:20:47.482Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:21:00.682Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: Error: Can't find variable: httpData
+ApplyInsurance@https://flight.easemytrip.com/Scripts/ApiCall.min_new.js?v=hj:7773:52
+CheckInsuranceON@https://flight.easemytrip.com/Scripts/ApiCall.min_new.js?v=hj:6653:38
+fn
+$eval@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:145:347
+pre@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:279:306
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:16:76
+la@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:81:91
+p@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:66:151
+g@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:58:482
+g@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:58:499
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:58:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:63:44
+d@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:59:475
+m@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:64:59
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:276:470
+$digest@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:143:182
+$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:545
+invoke@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:41:461
+c@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:415
+Bc@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:21:180
+fe@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:20:2
+https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:317:388
+l@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:17015
+fireWith@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:34626
+ready@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:12529
+A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:9928 <div class="ad-m" ng-init="CheckInsuranceON()">
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:21:00.683Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  (anonymous function) (https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:118)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:21:16.711Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - msg: SyntaxError: Unexpected token ')'
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2020-06-30T17:21:16.711Z] Session [8bcf3d70-baf5-11ea-a57b-bfd2bf2dcb0a] - page.onError - stack:
+  insertBefore (https://www.ixigo.com/search/result/flight/BLR/BOM/01082020//1/0/0/e?source=Search%20Form:3)
+  activateScript (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  (anonymous function) (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  run (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  (anonymous function) (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+  (anonymous function) (https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js:1)
+
+  phantomjs://platform/console++.js:263 in error
+[INFO  - 2020-06-30T17:22:12.255Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2020-06-30T17:27:12.260Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2020-06-30T17:32:12.260Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW

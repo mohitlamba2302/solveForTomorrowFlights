@@ -2,10 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
-from flask import Flask
+from flask import Flask, Response
 import json
 from flask import jsonify
 from random import randint
+from flask import request
+import hashlib
 
 driver = webdriver.PhantomJS()
 app = Flask(__name__)
@@ -99,7 +101,7 @@ def ixigo_get_children(frm, dest,date):
 	return ele
 
 def get_inner_offers(frm, dest,date):
-    soup=BeautifulSoup(get_html(frm,dest,date),'lxml')
+    soup=BeautifulSoup(ease_get_html(frm,dest,date),'lxml')
     elements = driver.find_elements_by_class_name("book-bt-n")
     if(len(elements)>0):
         elements[0].click()
@@ -176,20 +178,40 @@ def create_dict(frm, dest,date):
 		content.append(dic)
 	return content
 
-@app.route('/')
-def hello():
-	my_cities = get_city_data()
-	date = '22/07/2020'
-	for frm in my_cities:
-		for dest in my_cities:
-			if frm==dest:
-				continue
-			dictionary = create_dict(frm, dest, '01/08/2020')
-			json_object = json.dumps(dictionary, indent = 4)
-			print('writing')
-			r = requests.post('https://flightscrap.herokuapp.com/api/flights/add', data={'flights':json_object}, allow_redirects=True)
-			print(r)
-			with open("sample.json", "w") as outfile: 
-				outfile.write(json_object) 
 
-	return 'hello world'
+@app.route('/', methods = ['GET', 'POST'])	
+def fetch():
+	if request.method == 'POST':
+
+		data = json.loads(request.data)
+		if 'source' not in data:
+			return 'data is required'
+
+		frm = data['source']
+		dest = data['destination']
+		date = data['date']
+		if frm==dest:
+			return {}
+		dictionary = create_dict(frm, dest, date)
+		json_object = json.dumps(dictionary, indent = 4)
+		print('writing')
+		r = requests.post('https://flightscrap.herokuapp.com/api/flights/add', data={'flights':json_object}, allow_redirects=True)
+		# print(r)
+		# with open("sample.json", "w") as outfile: 
+		# 	outfile.write(json_object) 
+		return json_object
+
+	if request.method == 'GET':
+		my_cities = get_city_data()
+		date = '22/07/2020'
+		for frm in my_cities:
+			for dest in my_cities:
+				if frm==dest:
+					continue
+				dictionary = create_dict(frm, dest, '01/08/2020')
+				json_object = json.dumps(dictionary, indent = 4)
+				print('writing')
+				r = requests.post('https://flightscrap.herokuapp.com/api/flights/add', data={'flights':json_object}, allow_redirects=True)
+				print(r)
+
+		return 'hello world'
