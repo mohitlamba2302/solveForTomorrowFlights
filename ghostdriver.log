@@ -49,8 +49,8 @@ A@https://flight.easemytrip.com/Scripts/jquery.min.js?v=636156039097565092:2:992
   phantomjs://platform/console++.js:263 in error
 [ERROR - 2020-06-30T05:11:37.801Z] Session [273d7ee0-ba90-11ea-bf72-6d7c301d28b8] - page.onError - msg: Error: [orderBy:notarray] http://errors.angularjs.org/1.5.8/orderBy/notarray?p0=%7B%7D
 https://flight.easemytrip.com/Scripts/angular.min.js?v=63[INFO  - 2020-06-30T05:13:04.856Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-emytrip.com/Scripts/angular.min.js?v=636156039065430120:143:44
-$apply@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:146:120
+[INFO  - 2020-06-30T05:18:04.866Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+30120:146:120
 l@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:97:373
 J@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:102:35
 onload@https://flight.easemytrip.com/Scripts/angular.min.js?v=636156039065430120:103:5
